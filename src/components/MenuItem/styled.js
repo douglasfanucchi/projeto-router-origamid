@@ -11,7 +11,8 @@ export default styled(NavLink)`
   font-size: 20px;
   background-color: #ccc;
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: #bbb;
     border-color: #ccc;
   }
