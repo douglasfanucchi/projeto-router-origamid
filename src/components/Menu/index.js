@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import MenuItem from '../MenuItem';
 
@@ -18,7 +18,7 @@ const Menu = () => {
     <nav>
       <ul>
         {pages.map((page) => (
-          <MenuItem page={page} />
+          <MenuItem key={page.uri} page={page} />
         ))}
       </ul>
     </nav>
