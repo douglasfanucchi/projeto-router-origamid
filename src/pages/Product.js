@@ -7,7 +7,7 @@ import useFetch from '../hooks/useFetch';
 
 const Product = () => {
   const { id } = useParams();
-  const { request, data } = useFetch(
+  const { request, data, loading } = useFetch(
     `https://ranekapi.origamid.dev/json/api/produto/${id}`,
   );
 
@@ -15,23 +15,25 @@ const Product = () => {
     request();
   }, [id]);
 
-  if (!data) return null;
-
   return (
     <div className={pageStyles.container}>
       <Menu />
-      <section
-        className={`${productStyles.singleProduct} ${productStyles.active}`}
-      >
-        <figure>
-          <img src={data.fotos[0].src} />
-        </figure>
-        <div className={productStyles.productDescription}>
-          <h2>{data.nome}</h2>
-          <span className={productStyles.price}>R$ {data.preco}</span>
-          <p>{data.descricao}</p>
-        </div>
-      </section>
+      {loading && <p style={{ marginTop: '60px' }}>Carregando...</p>}
+
+      {!loading && data && (
+        <section
+          className={`${productStyles.singleProduct} ${productStyles.active}`}
+        >
+          <figure>
+            <img src={data.fotos[0].src} />
+          </figure>
+          <div className={productStyles.productDescription}>
+            <h2>{data.nome}</h2>
+            <span className={productStyles.price}>R$ {data.preco}</span>
+            <p>{data.descricao}</p>
+          </div>
+        </section>
+      )}
     </div>
   );
 };
