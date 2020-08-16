@@ -7,6 +7,7 @@ export default styled.ul`
   align-items: center;
   padding: 0;
   margin: 0;
+  margin-top: 50px;
   margin-right: -5px;
   margin-left: -5px;
 `;
