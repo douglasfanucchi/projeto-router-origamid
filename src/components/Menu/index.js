@@ -7,10 +7,6 @@ const pages = [
     uri: '/',
     title: 'Produtos',
   },
-  {
-    uri: '/contato',
-    title: 'Contato',
-  },
 ];
 
 const Menu = () => {

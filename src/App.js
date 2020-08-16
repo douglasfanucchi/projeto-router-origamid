@@ -13,7 +13,6 @@ function App() {
             <Route path="/:id"></Route>
           </Route>
           <Route path="/produto/:id" element={<Product />} />
-          <Route path="/contato" />
         </Routes>
       </BrowserRouter>
     </>
