@@ -20,7 +20,9 @@ const Product = () => {
   return (
     <div className={pageStyles.container}>
       <Menu />
-      <section className={productStyles.singleProduct}>
+      <section
+        className={`${productStyles.singleProduct} ${productStyles.active}`}
+      >
         <figure>
           <img src={data.fotos[0].src} />
         </figure>
