@@ -4,6 +4,7 @@ import Menu from '../components/Menu/index';
 import useFetch from '../hooks/useFetch';
 import ProductsList from '../components/ProductsList/styled';
 import Product from '../components/Product';
+import { Helmet } from 'react-helmet';
 
 const Products = () => {
   const { request, data } = useFetch(
@@ -15,13 +16,18 @@ const Products = () => {
   }, []);
 
   return (
-    <div className={pageStyles.container}>
-      <Menu />
-      <ProductsList>
-        {data &&
-          data.map((product) => <Product key={product.id} data={product} />)}
-      </ProductsList>
-    </div>
+    <>
+      <Helmet>
+        <title>Products - List</title>
+      </Helmet>
+      <div className={pageStyles.container}>
+        <Menu />
+        <ProductsList>
+          {data &&
+            data.map((product) => <Product key={product.id} data={product} />)}
+        </ProductsList>
+      </div>
+    </>
   );
 };
 
