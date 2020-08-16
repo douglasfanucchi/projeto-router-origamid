@@ -6,6 +6,8 @@ export default styled.li`
   padding-left: 5px;
   padding-right: 5px;
   margin-bottom: 30px;
+  cursor: pointer;
+  user-select: none;
 
   & img {
     border-radius: var(--radius);

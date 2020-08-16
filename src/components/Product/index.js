@@ -5,7 +5,7 @@ const Product = ({ data }) => {
   if (!data) return <></>;
   console.log(data);
   return (
-    <ProductStyled>
+    <ProductStyled onClick={() => null}>
       <figure>
         <img src={data.fotos[0].src} />
         <figcaption>{data.nome}</figcaption>
