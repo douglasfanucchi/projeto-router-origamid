@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default styled(NavLink)`
   text-decoration: none;
+  display: inline-block;
   border: 1px solid #ccc;
   padding: 10px 20px;
   user-select: none;
